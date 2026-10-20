@@ -1,5 +1,6 @@
 # Fullstack Entwicklung mit Spring Boot 
-Video Tutorial (https://www.youtube.com/playlist?list=PL62XI1PkyESHApWZKk3bK2RBHcpQ1Btsq)
+Ein Projekt aus dem Kapitel "Fullstack Development mit Spring Boot" im SWPP-Unterricht 2026/2027 an der HAK Imst
+Es wird ein [Video Tutorial](https://www.youtube.com/playlist?list=PL62XI1PkyESHApWZKk3bK2RBHcpQ1Btsq) von Ex-HAK-Lehrer Herr Prof. Dr. Landerer nachprogrammiert.
 
 stehengeblieben bei: Video B fertig
 
