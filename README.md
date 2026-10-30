@@ -28,3 +28,9 @@ stehengeblieben bei: Video B fertig
 
 #### 5. ApplicationRunner
 * **ApplicationRunner implementieren:** Ein Interface, das es erlaubt, bestimmten Java-Code direkt nach dem erfolgreichen Start der Spring-Boot-Anwendung automatisch auszuführen (ideal, um z. B. Testdaten in die Datenbank zu schreiben).
+
+### Video C - Datenlayer
+
+- StudentJPARepo: Basistechnologie für DB-Zugriff
+- DBZugriffStudenten: Was man von der DB haben will
+- JPA: Dependency Injection, Autowired
