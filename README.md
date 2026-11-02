@@ -34,3 +34,7 @@ stehengeblieben bei: Video B fertig
 - StudentJPARepo: Basistechnologie für DB-Zugriff
 - DBZugriffStudenten: Was man von der DB haben will
 - JPA: Dependency Injection, Autowired
+
+### Video D - Service Layer
+- StudentenService: Interface vom Service
+- StudentenServiceImpl: implementiert das Interface, setzt im Konstruktor über Dependency Injection seine Instanzvariable für den Datenlayer

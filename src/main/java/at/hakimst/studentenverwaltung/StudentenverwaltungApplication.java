@@ -1,6 +1,7 @@
 package at.hakimst.studentenverwaltung;
 
 import at.hakimst.studentenverwaltung.domain.Student;
+import at.hakimst.studentenverwaltung.repositories.DbZugriffStudenten;
 import at.hakimst.studentenverwaltung.repositories.StudentJPARepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -12,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StudentenverwaltungApplication implements ApplicationRunner {
 
 	@Autowired
-	StudentJPARepo studentJPARepo;
+	DbZugriffStudenten dbZugriffStudenten;
 
 	public static void main(String[] args) {
 		SpringApplication.run(StudentenverwaltungApplication.class, args);
@@ -20,8 +21,8 @@ public class StudentenverwaltungApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		this.studentJPARepo.save(new Student("Paul Summerauer", "6460"));
-		this.studentJPARepo.save(new Student("Günter Hasel", "3322"));
-		this.studentJPARepo.save(new Student("Maria Brunsteiner", "8080"));
+		this.dbZugriffStudenten.studentSpeichern(new Student("Paul Summerauer", "6460"));
+		this.dbZugriffStudenten.studentSpeichern(new Student("Günter Hasel", "3322"));
+		this.dbZugriffStudenten.studentSpeichern(new Student("Maria Brunsteiner", "8080"));
 	}
 }
