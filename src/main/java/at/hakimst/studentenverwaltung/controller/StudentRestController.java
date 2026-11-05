@@ -2,8 +2,13 @@ package at.hakimst.studentenverwaltung.controller;
 
 import at.hakimst.studentenverwaltung.domain.Student;
 import at.hakimst.studentenverwaltung.exceptions.StudentNichtGefunden;
+import at.hakimst.studentenverwaltung.exceptions.StudentValidierungFehlgeschlagen;
 import at.hakimst.studentenverwaltung.services.StudentenService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,8 +30,18 @@ public class StudentRestController {
     }
 
     @PostMapping
-    public ResponseEntity<Student> studentEinfuegen(@RequestBody Student student) {
-        return ResponseEntity.ok(this.studentenService.studentEinfuegen(student));
+    public ResponseEntity<Student> studentEinfuegen(@Valid @RequestBody Student student, BindingResult bindingResult) throws StudentValidierungFehlgeschlagen {
+        String errors = "";
+        if (bindingResult.hasErrors()) {
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                errors += "\nValidierungsfehler für Objekt " + error.getObjectName() +
+                      " im Feld " + ((FieldError)error).getField() + " mit folgendem Problem: " +
+                        error.getDefaultMessage();
+            }
+            throw new StudentValidierungFehlgeschlagen(errors);
+        } else {
+            return ResponseEntity.ok(this.studentenService.studentEinfuegen(student));
+        }
     }
 
     @DeleteMapping("/{id}")
