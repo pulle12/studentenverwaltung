@@ -3,9 +3,11 @@ package at.hakimst.studentenverwaltung.services;
 import at.hakimst.studentenverwaltung.domain.Student;
 import at.hakimst.studentenverwaltung.exceptions.StudentNichtGefunden;
 import at.hakimst.studentenverwaltung.repositories.DbZugriffStudenten;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentenServiceImpl implements StudentenService {
 
     private DbZugriffStudenten dbZugriffStudenten;
