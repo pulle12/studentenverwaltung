@@ -38,3 +38,10 @@ stehengeblieben bei: Video B fertig
 ### Video D - Service Layer
 - StudentenService: Interface vom Service
 - StudentenServiceImpl: implementiert das Interface, setzt im Konstruktor über Dependency Injection seine Instanzvariable für den Datenlayer
+
+### Video E - Controller Layer
+- Controller verwendet das ServiceLayer-Interface.
+- Im Service Layer ist eine Implementierung des ServiceLayer vorhanden.
+- Das Interface verwendet ein Interface für den DB-Zugriff.
+- Dieses geht direkt in JPA intern und holt das Objekt aus der DB am Ende.
+- Annotationen wie RequestBody und PathVariable sind sehr nützlich, um an der API zu arbeiten.
