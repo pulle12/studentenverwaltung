@@ -52,4 +52,9 @@ stehengeblieben bei: Video B fertig
 ### Fazit
 Spring Boot macht Spaß, weil es Programmierern viel Arbeit abnimmt (z.B. Annotationen).
 
-
+### Mögliche Erweiterungen
+- Die Fehlermeldungen in 'studentEinfuegen' richtig ausgeben mit Zeilenumbrüchen
+- Bessere Nachricht für den Validierungsfehler beim Namen eines Studenten implementieren (statt der hohen Obergrenze)
+- Domänenklasse technologiefrei ausimplementieren (Annotationen)
+- Kurse zu Studenten hinzufügen mit eigener Logik und Layern wieder
+- Methoden mit echter Businesslogik hinzufügen statt nur einfachen CRUD-Methoden
