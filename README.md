@@ -45,3 +45,11 @@ stehengeblieben bei: Video B fertig
 - Das Interface verwendet ein Interface für den DB-Zugriff.
 - Dieses geht direkt in JPA intern und holt das Objekt aus der DB am Ende.
 - Annotationen wie RequestBody und PathVariable sind sehr nützlich, um an der API zu arbeiten.
+
+### Video F - Exceptions und Validierung
+- Exceptions sind eine eigene Infrastruktur auf der gleichen "Höhe" wie der Controller Layer und das Repository für den DB-Zugriff.
+
+### Fazit
+Spring Boot macht Spaß, weil es Programmierern viel Arbeit abnimmt (z.B. Annotationen).
+
+
