@@ -52,6 +52,9 @@ stehengeblieben bei: Video B fertig
 ### Fazit
 Spring Boot macht Spaß, weil es Programmierern viel Arbeit abnimmt (z.B. Annotationen).
 
+### Finale Architektur
+![Architektur-Zeichnung](docs/architecture.png)
+
 ### Mögliche Erweiterungen
 - Die Fehlermeldungen in 'studentEinfuegen' richtig ausgeben mit Zeilenumbrüchen
 - Bessere Nachricht für den Validierungsfehler beim Namen eines Studenten implementieren (statt der hohen Obergrenze)
