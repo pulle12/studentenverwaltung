@@ -27,6 +27,11 @@ public class StudentenServiceImpl implements StudentenService {
     }
 
     @Override
+    public Student studentUpdaten(Student student) {
+        return this.dbZugriffStudenten.studentSpeichern(student);
+    }
+
+    @Override
     public Student studentMitId(Long id) throws StudentNichtGefunden {
         return this.dbZugriffStudenten.studentMitId(id);
     }
@@ -37,7 +42,7 @@ public class StudentenServiceImpl implements StudentenService {
     }
 
     @Override
-    public void studentLoeaschenMitId(Long id) {
-        this.dbZugriffStudenten.studentLoeschenMitId(id);
+    public Student studentLoeschenMitId(Long id) throws StudentNichtGefunden {
+        return this.dbZugriffStudenten.studentLoeschenMitId(id);
     }
 }

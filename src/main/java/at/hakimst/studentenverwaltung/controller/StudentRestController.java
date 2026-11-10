@@ -45,9 +45,9 @@ public class StudentRestController {
     }
 
     @DeleteMapping("/{id}")
-    public String studentLoeschen(@PathVariable Long id) {
-        this.studentenService.studentLoeaschenMitId(id);
-        return "Student gelöscht";
+    public String studentLoeschen(@PathVariable Long id) throws StudentNichtGefunden {
+        Student geloeschterStudent = this.studentenService.studentLoeschenMitId(id);
+        return "Student " + geloeschterStudent.getName() + " wurde erfolgreich gelöscht.";
     }
 
     @GetMapping("/mitplz/{plz}")
@@ -58,5 +58,14 @@ public class StudentRestController {
     @GetMapping("/{id}")
     public ResponseEntity<Student> studentMitId(@PathVariable Long id) throws StudentNichtGefunden {
         return ResponseEntity.ok(this.studentenService.studentMitId(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> studentUpdaten(@PathVariable Long id, @RequestBody Student studentDetails) throws StudentNichtGefunden {
+        // Nur aufrufen, um sicherzustellen, dass er existiert (wirft Exception falls nicht)
+        this.studentenService.studentMitId(id);
+        studentDetails.setId(id);
+        Student aktualisierterStudent = this.studentenService.studentUpdaten(studentDetails);
+        return ResponseEntity.ok(aktualisierterStudent);
     }
 }

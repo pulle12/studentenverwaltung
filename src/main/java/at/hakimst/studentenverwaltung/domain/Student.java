@@ -20,10 +20,10 @@ public class Student {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long id;
 
-    @Size(min=2)
+    @Size(min=2, max=255, message = "Der Studentenname '${validatedValue}'")
     private String name;
 
-    @Size(min=4, max=6)
+    @Size(min=4, max=6, message = "Die Postleitzahl '${validatedValue}'")
     private String plz;
 
     public Student(String name, String plz) {

@@ -10,5 +10,5 @@ public interface DbZugriffStudenten {
     List<Student> alleStudenten();
     List<Student> alleStudentenAusDemOrt(String plz);
     Student studentMitId(Long id) throws StudentNichtGefunden;
-    void studentLoeschenMitId(Long id);
+    Student studentLoeschenMitId(Long id) throws StudentNichtGefunden;
 }

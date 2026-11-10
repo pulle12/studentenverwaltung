@@ -2,6 +2,7 @@ package at.hakimst.studentenverwaltung.repositories;
 
 import at.hakimst.studentenverwaltung.domain.Student;
 import at.hakimst.studentenverwaltung.exceptions.StudentNichtGefunden;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -43,7 +44,10 @@ public class DbZugriffStudentenJPA implements DbZugriffStudenten {
     }
 
     @Override
-    public void studentLoeschenMitId(Long id) {
+    @Transactional // Sorgt dafür, dass Laden und Löschen in einer sicheren Transaktion stattfinden
+    public Student studentLoeschenMitId(Long id) throws StudentNichtGefunden {
+        Student studentZumLoeschen = this.studentMitId(id);
         this.studentJPARepo.deleteById(id);
+        return studentZumLoeschen;
     }
 }
