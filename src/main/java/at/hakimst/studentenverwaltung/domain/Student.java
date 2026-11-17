@@ -20,10 +20,10 @@ public class Student {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long id;
 
-    @Size(min=2, max=255, message = "Der Studentenname '${validatedValue}'")
+    @Size(min=2, max=255, message = "Der Studentenname '${validatedValue}' ist ungültig. Er muss zwischen 2 und 255 Zeichen lang sein.")
     private String name;
 
-    @Size(min=4, max=6, message = "Die Postleitzahl '${validatedValue}'")
+    @Size(min=4, max=6, message = "Die Postleitzahl '${validatedValue}' ist ungültig. Sie muss zwischen 4 und 6 Zeichen lang sein.")
     private String plz;
 
     public Student(String name, String plz) {
