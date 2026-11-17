@@ -10,26 +10,29 @@
 <body>
 <div class="container-fluid">
     <h1>Studentenliste</h1>
+    <hr class="border-2 border-top border-info">
+    <a th:href="@{/web/v1/studenten/insert}" class="btn btn-info" role="button">Student einfuegen</a>
+    <hr class="border-2 border-top border-info">
 
+    <table class="table" id="studentTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>PLZ</th>
+            <th>Aktion</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student: ${allStudents}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.plz}"></td>
+            <td>Aktion offen</td>
+        </tr>
+        </tbody>
+
+    </table>
 </div>
-<table class="table" id="studentTable">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>PLZ</th>
-        <th>Aktion</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="student: ${allStudents}">
-        <td th:text="${student.id}"></td>
-        <td th:text="${student.name}"></td>
-        <td th:text="${student.plz}"></td>
-        <td>Aktion offen</td>
-    </tr>
-    </tbody>
-
-</table>
 </body>
 </html>
