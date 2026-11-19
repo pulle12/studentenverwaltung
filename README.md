@@ -65,5 +65,11 @@ Spring Boot macht Spaß, weil es Programmierern viel Arbeit abnimmt (z.B. Annota
 - Methoden mit echter Businesslogik hinzufügen statt nur einfachen CRUD-Methoden
 
 ### Video-Tutorial 2 - Thymeleaf Frontend
-Put/patch statt post bei updaten
-14:04 stop video 3
+Das Thymeleaf-Frontend ergänzt das Backend um eine webbasierte Oberfläche zur Verwaltung der Studenten. Mit Spring-MVC-Controllern und Thymeleaf-Templates lassen sich Studenten anzeigen, neu anlegen und aktualisieren. Formulardaten werden an den Service übergeben; Validierungsfehler können direkt im Formular angezeigt werden.
+
+- **Spring MVC:** Controller verarbeiten GET- und POST-Anfragen und wählen die passende Seite oder Weiterleitung aus.
+- **Thymeleaf:** Verknüpft HTML-Templates mit Model-Daten und bindet Formulare an Java-Objekte.
+- **Formularvalidierung:** `@Valid` und `BindingResult` prüfen Eingaben und ermöglichen die Anzeige von Fehlermeldungen.
+- **Model und Datenbindung:** Übergibt Studentendaten zwischen Controller und Template.
+- **Redirect nach Änderungen:** Leitet nach erfolgreichem Speichern oder Löschen zurück zur Studentenliste.
+- **Pfadvariablen:** `@PathVariable` liest IDs aus der URL, zum Beispiel beim Bearbeiten eines Studenten.
