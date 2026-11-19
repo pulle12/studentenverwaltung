@@ -65,6 +65,5 @@ Spring Boot macht Spaß, weil es Programmierern viel Arbeit abnimmt (z.B. Annota
 - Methoden mit echter Businesslogik hinzufügen statt nur einfachen CRUD-Methoden
 
 ### Video-Tutorial 2 - Thymeleaf Frontend
-serverseitige validation Id readonly bei update?
 Put/patch statt post bei updaten
 14:04 stop video 3
