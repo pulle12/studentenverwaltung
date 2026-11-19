@@ -57,12 +57,14 @@ public class StudentThymeleafController {
         }
     }
 
-    @PostMapping("/update")
-    public String studentUpdaten(@Valid Student student, BindingResult bindingResult) {
+    @PostMapping("/update/{id}")
+    public String studentUpdaten(@PathVariable Long id, @Valid Student student, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
+            student.setId(id);
             return "studentenupdaten";
         } else {
             try {
+                student.setId(id);
                 this.studentenService.studentUpdaten(student);
                 return "redirect:/web/v1/studenten";
             } catch (StudentNichtGefunden studentNichtGefunden) {

@@ -15,7 +15,7 @@
     <a th:href="@{/web/v1/studenten}" class="btn btn-info" role="button">Studentenliste</a>
     <hr class="border-2 border-top border-info">
 
-    <form th:object="${student}" th:action="@{/web/v1/studenten/update}" method="post">
+    <form th:object="${student}" th:action="@{/web/v1/studenten/update/{id}(id=${student.id})}" method="post">
 
         <div class="mb-3">
             <label for="id" class="form-label">ID</label>
